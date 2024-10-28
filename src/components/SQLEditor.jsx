@@ -18,7 +18,7 @@ const SQLEditor = () => {
     <div className="sql-editor-container">
       <div className="sidebar left-sidebar">
         {" "}
-        {/* Left sidebar for future use */}{" "}
+        {/* Left sidebar for future use */} <h1>Left Sidebar</h1>
       </div>
       <div className="main-editor">
         <h2>SQL Editor</h2>
@@ -30,7 +30,7 @@ const SQLEditor = () => {
       </div>
       <div className="sidebar right-sidebar">
         {" "}
-        {/* Right sidebar for future use */}{" "}
+        {/* Right sidebar for future use */} <h1>Right Sidebar</h1>
       </div>
     </div>
   );
