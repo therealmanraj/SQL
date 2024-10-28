@@ -2,6 +2,7 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 import "../styles/styles.css";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const quiz = {
   topic: "Javascript",
@@ -46,6 +47,7 @@ const quiz = {
 };
 
 function Query() {
+  const navigate = useNavigate();
   const [activeQuestion, setActiveQuestion] = React.useState(0);
   const [selectedAnswer, setSelectedAnswer] = React.useState("");
   const [showResult, setShowResult] = React.useState(false);
@@ -90,6 +92,17 @@ function Query() {
   };
 
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
+
+  const continueGame = () => {
+    // Send data to the "/query" route
+    navigate("/SQLeditor", {
+      state: {
+        name,
+        company,
+        position,
+      },
+    });
+  };
 
   return (
     <CSSTransition
@@ -148,7 +161,9 @@ function Query() {
               <p>
                 Wrong Answers:<span> {result.wrongAnswers}</span>
               </p>
+              {/* <button onClick={continueGame}>Continue</button> */}
             </div>
+            <button onClick={continueGame}>Continue</button>
           </div>
         )}
       </div>
